@@ -5,6 +5,8 @@ import MyComponent from './my-component'
 import Products from './products'
 import Product from './product'
 import inventory from './inventory'
+import Category from "./category"
+
 
 
 class App extends Component {
@@ -19,7 +21,7 @@ class App extends Component {
 //          To get started, edit <code>src/App.js</code> and save to reload.
 //        </p>
         <MyComponent title="Product Inventory"/>
-        <Products inventory={inventory}/ >
+         <Products inventory={inventory}/ >
       </div>
     );
   }

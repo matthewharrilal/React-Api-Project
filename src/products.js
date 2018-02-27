@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import inventory from './inventory'
 import Product from './product'
+import Category from "./category"
 
 class Products extends React.Component {
     constructor(props) {
@@ -15,9 +16,19 @@ class Products extends React.Component {
             category={item.category} />)
         })
 
+        const categories = inventory.map((item) => {
+            console.log(item.category)
+            return (
+                <Category key={item.id}
+                {/* Similar to swift when we have to decode json what we have to do is makesure the names match*/}
+                category={item.category}/>
+            )
+        })
+
+
         return (
             <div>
-                {items}
+                {categories}
             </div>
         )
     }
