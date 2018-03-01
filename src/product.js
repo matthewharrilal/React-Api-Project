@@ -6,6 +6,7 @@ import Products from './products'
 class Product extends Component {
     constructor(props) {
         super(props);
+        
     }
     render() {
         return (
