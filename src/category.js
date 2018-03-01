@@ -32,7 +32,7 @@ class Category extends React.Component {
 const styles = {
     button: {
         margin: 0,
-        padding:20,
+        padding:10,
     },
     list: {
         left: 20

@@ -21,32 +21,42 @@ class Products extends React.Component {
        })
     }
     
+    
+//    myfilter = (item) => {
+//        return this.state.category === item.category
+//    }
+//    
+//    function myfilter(item){ 
+//        return this.state.category === item.category
+//    }
+    
+    
+    
     filterCategories() {
         // The point of this function is to check iterate through the inventory to see if the this.state.category
         const allProducts = this.props.inventory.filter(item => this.state.category === item.category);
         if (this.state.category === "All") {
             return this.items()
+        } else {
+            // return this.items().filter(item => this.state.category === item.category);
+            // this.props.inventory.filter(item => this.state.category === item.category);
         }
-        return allProducts.map((item, index) => {
-            return ( <Category key={item.id} 
+        
+        
+        
+        return allProducts.map((item) => {
+            return ( <Product key={item.id} 
                     name={item.name} 
                     price={item.price} 
                     category={item.category}
-                    onClick={() => this.filterCategories()}
                                />)
                     
         })
         
+        
+        
     }
                                
-    filteredWhenClickCategories() {
-        if (this.state.category === "All") {
-            return this.items()
-        }
-            return (<Category 
-                    onClick={() => this.filterCategories()}/>)
-        }
-    
     uniqueCategories() {
        return categories.map((item, index) => {
              return (
@@ -59,7 +69,7 @@ class Products extends React.Component {
         })
     } 
     
-    items() {
+    items(someItems) {
         return this.props.inventory.map((item) => {
             return(<Product key={item.id}
                             name={item.name}
