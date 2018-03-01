@@ -24,6 +24,9 @@ class Products extends React.Component {
     filterCategories() {
         // The point of this function is to check iterate through the inventory to see if the this.state.category
         const allProducts = this.props.inventory.filter(item => this.state.category === item.category);
+        if (this.state.category === "All") {
+            return this.items()
+        }
         return allProducts.map((item, index) => {
             return ( <Category key={item.id} 
                     name={item.name} 
@@ -37,6 +40,9 @@ class Products extends React.Component {
     }
                                
     filteredWhenClickCategories() {
+        if (this.state.category === "All") {
+            return this.items()
+        }
             return (<Category 
                     onClick={() => this.filterCategories()}/>)
         }
