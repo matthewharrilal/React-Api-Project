@@ -15,7 +15,7 @@ class Category extends React.Component {
 //            </div>
 //        )
     
-    render() {
+    render() { // Describes the category layout
 //        return <button style={styles.button} onClick={this.props.onClick}> {this.props.category} </button>
         
         return (<button style={styles.button} onClick={this.props.onClick}> <div className="CategoryInventory">                                                

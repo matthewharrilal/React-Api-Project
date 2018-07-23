@@ -9,26 +9,18 @@ class Products extends React.Component {
         super(props);
 
         this.state = {
-            category: "All"
+            category: "All" // Setting the initial state to be display all products
         }
     }
     
     clickCategory(index) {
-       const category = categories[index]
+       const category = categories[index] // Set category constant to the category that the user clicks on
        
        this.setState({
-           category
+           category // Set the state from the all category to the product that they just clicked on
        })
     }
-    
-    
-//    myfilter = (item) => {
-//        return this.state.category === item.category
-//    }
-//    
-//    function myfilter(item){ 
-//        return this.state.category === item.category
-//    }
+
     
     
     
@@ -37,15 +29,10 @@ class Products extends React.Component {
         const allProducts = this.props.inventory.filter(item => this.state.category === item.category);
         if (this.state.category === "All") {
             return this.items()
-        } else {
-            // return this.items().filter(item => this.state.category === item.category);
-            // this.props.inventory.filter(item => this.state.category === item.category);
-        }
+        } 
         
-        
-        
-        return allProducts.map((item) => {
-            return ( <Product key={item.id} 
+        return allProducts.map((item) => { // Iterate through all products and create a product component for each product
+            return ( <Product key={item.id} // Pass these values to the individual Product component 
                     name={item.name} 
                     price={item.price} 
                     category={item.category}
@@ -57,8 +44,8 @@ class Products extends React.Component {
         
     }
                                
-    uniqueCategories() {
-       return categories.map((item, index) => {
+    uniqueCategories() { // Displays categories at the top of the screen 
+       return categories.map((item, index) => { // Categories from in file json 
              return (
                 <Category 
                     key={index}
@@ -70,7 +57,7 @@ class Products extends React.Component {
     } 
     
     items(someItems) {
-        return this.props.inventory.map((item) => {
+        return this.props.inventory.map((item) => { // Renders the products based off of the items 
             return(<Product key={item.id}
                             name={item.name}
                             price={item.price}

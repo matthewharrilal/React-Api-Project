@@ -9,7 +9,7 @@ import Category from "./category"
 
 
 
-class App extends Component {
+class App extends Component { // Whats used to render the application
   render() {
     return (
       <div className="App">

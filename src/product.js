@@ -9,7 +9,7 @@ class Product extends Component {
         
     }
     render() {
-        return (
+        return ( // Describing the layout of the Product Component 
             <div id="ProductInventory">
                 <h1>{this.props.name}</h1>
                 <small>{this.props.price}</small>
